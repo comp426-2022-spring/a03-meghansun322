@@ -8,3 +8,8 @@ const server = app.listen(port, () => {
 });
 
 // Put listen at the end
+
+app.use(function (req, res) {
+  res.status(404).end("Endpoint does not exist");
+  res.type("text/plain");
+});
