@@ -1,7 +1,10 @@
 const express = require("express");
+
 const app = express();
 
-var port = 5555;
+const args = require("minimist")(process.argv.slice(2));
+
+const port = args.port || process.env.PORT || 5000;
 
 function coinFlip() {
   var result;
